@@ -52,11 +52,11 @@ main(){
 		hero.close();
 		//mostrando os dados d heroi gravados no vetor
 		system("cls");
-		cout<<"\nHerói selecionado = "<<heroi_ativo.nome;
+		cout<<"\nHerï¿½i selecionado = "<<heroi_ativo.nome;
 		cout<<"\nAtque = "<<heroi_ativo.atk;
 		cout<<"\nVida = "<<heroi_ativo.vida_max;
-		cout<<"\nNível = "<<heroi_ativo.lv;
-		cout<<"\nExperiência = "<<heroi_ativo.xp;
+		cout<<"\nNï¿½vel = "<<heroi_ativo.lv;
+		cout<<"\nExperiï¿½ncia = "<<heroi_ativo.xp;
 		cout<<"\n";
 		system("pause");
 		luta(heroi_ativo);
@@ -66,6 +66,7 @@ main(){
 		main();
 	}
 	else{
+	// teste GIT
 	//	goto quit;
 	}	
 }
@@ -77,7 +78,7 @@ int selecionar(){
 	mostrar.open("chardata.txt", ios::in);
 	//posicionar o poteiro ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	mostrar.getline(mostra, 3, '#');
-	//laço q mostra os boneco ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	//laï¿½o q mostra os boneco ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	for(cont=num_char; cont>0;cont--){
 		mostrar.getline(mostra, 25, '#');
 		cout<<"ID: "<<mostra;
@@ -93,7 +94,7 @@ int selecionar(){
 		cout<<"\tXP: "<<mostra;
 	}
 	mostrar.close();
-	cout<<"\nSelecione o seu herói: ";
+	cout<<"\nSelecione o seu herï¿½i: ";
 	cin>>cont;
 	fflush(stdin);
 	system("cls");
@@ -105,13 +106,13 @@ void criar(){
 	system("cls");
 	char nome[20], mostra[25];
 	int num_char=-1;
-	cout<<"\nInforme um nome de no máximo 20 caracteres para o seu personagem: ";
+	cout<<"\nInforme um nome de no mï¿½ximo 20 caracteres para o seu personagem: ";
 	gets (nome);
 	//cout<<"\nTEste do NOME: "<<nome; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	fflush(stdin);
 	fstream mostrar;
 	mostrar.open("chardata.txt", ios::in);
-	// parte q conta quantos personagesn há: ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	// parte q conta quantos personagesn hï¿½: ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 		while(!mostrar.fail()){
 			mostrar.getline(mostra, 88);
 			num_char++;
@@ -143,15 +144,15 @@ void luta(personagem heroi){
 	cout<<"###################BATALHAAAAAAAAAAAAAAAAAAAAA################\n\n\n";
 	cout<<"Vida = "<<vida<<"\t\tVida = "<<vida_ini<<"\n";
 	cout<<" O\t\t\t O\n/|\\\t\t\t/|\\\n/\\\t\t\t/\\\n";
-	cout<<"Oque você fará?\n1 - Atacar!!!\t2 - Desistir como um medroso sem honra!!";
+	cout<<"Oque vocï¿½ farï¿½?\n1 - Atacar!!!\t2 - Desistir como um medroso sem honra!!";
 	cin>> menu;
 	fflush(stdin);
 	if(menu == 1){
-		//-calculo do dano crítico e envio do dano ao inimigo ;;;;;;;;;;;;;;;;;;;;;;;
+		//-calculo do dano crï¿½tico e envio do dano ao inimigo ;;;;;;;;;;;;;;;;;;;;;;;
 		critico = rand() % 50;
 		if(critico>22){
 			system("color 0a");
-			cout<<"\n\n\nDANO CrÍTICO!!!\ndano recebido pelo inimigo: "<<(heroi.atk*3)<<"\n\n\n";
+			cout<<"\n\n\nDANO Crï¿½TICO!!!\ndano recebido pelo inimigo: "<<(heroi.atk*3)<<"\n\n\n";
 			vida_ini -= (heroi.atk*3);
 			system("pause");
 		}
@@ -161,10 +162,10 @@ void luta(personagem heroi){
 			vida_ini -= heroi.atk;
 			system("pause");			
 		}
-		//vitória ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		//vitï¿½ria ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 		if(vida_ini<1){
 			system("cls");
-			cout<<"VOCÊ VENCEU!!!!!\n\n\nXP RECEBIDO = "<<inimigo.xp;
+			cout<<"VOCï¿½ VENCEU!!!!!\n\n\nXP RECEBIDO = "<<inimigo.xp;
 			system("pause");
 			heroi.xp += inimigo.xp;
 			//level UP ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -172,9 +173,9 @@ void luta(personagem heroi){
 			if(heroi.xp>max_xp){
 				system("cls");
 				heroi.xp -= max_xp;
-				cout<<"\nVOCÊ PASSOU DE NÍVEL!!!!";
+				cout<<"\nVOCï¿½ PASSOU DE Nï¿½VEL!!!!";
 				heroi.lv++;
-				//adicionar atributos ao herói
+				//adicionar atributos ao herï¿½i
 				if(heroi.lv%5 == 0){
 					atributos = 3;
 				}
@@ -184,7 +185,7 @@ void luta(personagem heroi){
 				cout<<"\nAtributos aumentados!!!\n";
 				//CONTINUAR DAQUIIIIIIIII!!!!!!!!!!!!! ;;;;;;;;;;;;;;;;;;;;;;;;;
 				max_xp = pegar_xp(heroi.lv);	
-				cout<<"\nVOCÊ ALCANÇOU O NÍVEL "<<heroi.lv<<"!!!";
+				cout<<"\nVOCï¿½ ALCANï¿½OU O Nï¿½VEL "<<heroi.lv<<"!!!";
 				cout<<"\nATAQUE = "<<heroi.atk<<" + "<<atributos<<" = "<<heroi.atk+atributos;
 				cout<<"\nATAQUE = "<<heroi.vida_max<<" + "<<atributos<<" = "<<heroi.vida_max+atributos;
 				heroi.vida_max += atributos;
@@ -210,7 +211,7 @@ void luta(personagem heroi){
 	}
 	else{
 		system("cls");
-		cout<<"opção inválida!\n\n\n\n\n";
+		cout<<"opï¿½ï¿½o invï¿½lida!\n\n\n\n\n";
 		system("pause");
 		goto luta;
 	}
@@ -225,7 +226,7 @@ int pegar_xp(int lv){
 		//posicionar ponteiro
 		for(cont=(lv-1); cont>0; cont--){
 			xp.getline(pegar, 50);
-			/*cout<<"\nTESTE DO LAÇO "<<cont;
+			/*cout<<"\nTESTE DO LAï¿½O "<<cont;
 			cout<<"\n teste do txt!!!   "<<pegar;*/
 		}
 		xp.getline(pegar,50,'#');
@@ -279,12 +280,12 @@ int conta_char(){
 	int num_char =-1;
 	fstream mostrar;
 	mostrar.open("chardata.txt", ios::in);
-	// parte q conta quantos personagesn há: ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	// parte q conta quantos personagesn hï¿½: ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	while(!mostrar.fail()){
 		mostrar.getline(mostra, 88);
 		num_char++;
 	}
-	cout<<"NÚMERO DE PERSONAGENS: "<<num_char<<"\n";
+	cout<<"Nï¿½MERO DE PERSONAGENS: "<<num_char<<"\n";
 	mostrar.close();
 	//fim da contagem ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	return num_char;
